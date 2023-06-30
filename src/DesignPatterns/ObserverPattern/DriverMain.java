@@ -6,6 +6,9 @@ import ObserverPattern.Subscriber.CurrentDisplay;
 public class DriverMain {
 
     public static void main(String[] args) {
+        /*
+        Observer pattern has a subject whose change in state is notified to all its observers
+         */
         WeatherData weatherData = new WeatherData();
 
         CurrentDisplay currentDisplay = new CurrentDisplay(weatherData);
