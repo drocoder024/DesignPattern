@@ -8,21 +8,24 @@ public class CurrentDisplay implements Display, Observer {
     private float temperature;
     private float humidity;
     private float pressure;
+    private float lastPressure;
 
     public CurrentDisplay(WeatherData weatherData) {
+        this.weatherData= weatherData;
         weatherData.registerObserver(this);
     }
 
     @Override
     public void display() {
-        System.out.println("current Display Board ->  "+ " temperature -> "+temperature+ " pressure -> "+pressure);
+        System.out.println("current Display Board ->  "+ " last pressure  -> "+lastPressure+ " pressure -> "+pressure);
     }
 
     @Override
     public void update() {
-        this.temperature=getTemperature();
-        this.humidity=getHumidity();
-        this.pressure=getPressure();
+        this.lastPressure= getPressure();
+        this.temperature= weatherData.getTemperature();
+        this.humidity= weatherData.getHumidity();
+        this.pressure= weatherData.getPressure();
         display();
 
     }
