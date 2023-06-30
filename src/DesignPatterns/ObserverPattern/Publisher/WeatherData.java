@@ -26,7 +26,7 @@ observerList.remove(observer);
     public void notifyObserver() {
 for(Observer observer: observerList)
 {
-    observer.update(temperature,humidity,pressure);
+    observer.update();
 }
     }
 
