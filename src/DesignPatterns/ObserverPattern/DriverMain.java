@@ -14,6 +14,7 @@ public class DriverMain {
         CurrentDisplay currentDisplay = new CurrentDisplay(weatherData);
 
         weatherData.setMeasurement(12.5f,55.4f,44.3f);
+        weatherData.unregisterObserver(currentDisplay);
         weatherData.setMeasurement(12.7f,55.4f,44.7f);
 
     }
