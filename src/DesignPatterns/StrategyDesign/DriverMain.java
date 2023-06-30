@@ -9,6 +9,10 @@ import StrategyDesign.WeaponBehaviour.WeaponBeaviour;
 
 public class DriverMain {
     public static void main(String[] args) {
+        /*
+         Strategy pattern encapsulates family of algorithm and lets it vary independently from clients
+         which use it
+         */
         Character king = new King();
         Character queen = new Queen();
 
